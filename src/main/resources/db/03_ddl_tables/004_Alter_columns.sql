@@ -1,4 +1,4 @@
---ALTER COLUMN DATA TYPE RULES
+-- ALTER COLUMN DATA TYPE RULES
 -- ALTER TABLE MODIFY -> can change column datatype only if it is empty or contains nulls only.
 
 CREATE TABLE empty_table

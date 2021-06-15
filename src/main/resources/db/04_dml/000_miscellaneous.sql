@@ -1,3 +1,4 @@
+-- The order of how SQL SELECT statements are processed are:
 -- 1. FROM
 -- 2. ON
 -- 3. JOIN -> Table aliases are visible below

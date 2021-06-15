@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  oracle:
+    image: "aleanca/oracledb-12.2.0.1-ee:12.2.0.1-ee-01"
+    container_name: "oracle-db"
+    hostname: "oracle-db"
+    restart: unless-stopped
+    environment:
+      ORACLE_SID: "ORCL12"
+      ORACLE_PDB: "PDB112"
+      ORACLE_PWD: ""
+    volumes:
+      - "oradata:/opt/oracle/oradata"
+    ports:
+      - 1521:1521
+      - 5500:5500
+    networks:
+      - localnet
+    logging:
+      driver: "local"
+      options:
+        max-size: "100m"
+        max-file: "2"
+
+volumes:
+  oradata:
+    name: oradata
+
+
+networks:
+  localnet:
+    driver: bridge
+    name: localnet
